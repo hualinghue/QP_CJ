@@ -43,13 +43,12 @@ class Collect_handle(object):
             print("无数据")
 
     def save_local(self,date):
-        file_path = "../file/%s/%s" %(
+        file_path = "../file/%s/" %(
             datetime.datetime.now().strftime("%Y%m%d"),
-            datetime.datetime.now().strftime("%H%M")+".txt",
         )
         if not os.path.exists(file_path):
             os.makedirs(file_path)
-        with open(file_path,'wb') as f:
+        with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'wb') as f:
             f.write(date)
     def get_url(self):
         get_data = requests.get(settings.GET_URL).text
