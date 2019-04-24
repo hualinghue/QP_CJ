@@ -49,7 +49,7 @@ class Collect_handle(object):
         if not os.path.exists(file_path):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'wb') as f:
-            f.write(date)
+            f.write(json.dumps(date))
     def get_url(self):
         get_data = requests.get(settings.GET_URL).text
         re_list = json.loads(get_data)
