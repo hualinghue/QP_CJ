@@ -31,9 +31,8 @@ class Collect_handle(object):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
     def handle(self):
-        for name,url in settings.GET_URL.items:
+        for name,url in settings.GET_URL.items():
             get_data = self.get_url(url)
-
             if get_data["err"] == 0:
                 self.save_local(get_data)
                 date_list = self.analyze_json(get_data["data"])
