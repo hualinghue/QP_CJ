@@ -51,8 +51,7 @@ class Collect_handle(object):
                 with open("%s%s" % (path, file_name), 'r') as f:
                     for link in f.readlines():
                         date = json.loads(link)
-                        print(date)
-                        date_list = self.analyze_json(date)
+                        date_list = self.analyze_json(date["data"])
                         self.write_mongo(date_list, "KY")
     def save_local(self,date):
         file_path = "../file/%s/" %(
