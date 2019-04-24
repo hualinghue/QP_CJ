@@ -34,6 +34,7 @@ class Collect_handle(object):
         # get_data = self.get_url()
         get_data = settings.get_data
         json.loads(get_data)
+        print(get_data)
         if get_data["err"] == 0:
             self.save_local(get_data)
             date_list = self.analyze_json(get_data["data"])
