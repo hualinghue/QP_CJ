@@ -33,8 +33,6 @@ class Collect_handle(object):
     def handle(self):
         # get_data = self.get_url()
         get_data = json.loads(settings.get_data)
-        print(get_data)
-        print(get_data["err"],type(get_data["err"]))
         if get_data["err"] == 0:
             self.save_local(get_data)
             date_list = self.analyze_json(get_data["data"])
@@ -49,6 +47,7 @@ class Collect_handle(object):
         if not os.path.exists(file_path):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'wb') as f:
+            print(json.dumps(date))
             f.write(json.dumps(date))
     def get_url(self):
         get_data = requests.get(settings.GET_URL).text
