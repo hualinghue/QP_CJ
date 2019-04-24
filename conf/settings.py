@@ -5,7 +5,9 @@ DB_PORT = 27017
 DB_NAME = "QP_CJ"
 DB_HOST = "10.8.63.117"
 
-GET_URL = "https://nihaohpt.wxqq888.com/KYApi/gameBets"
+GET_URL = {"https://nihaohpt.wxqq888.com/KYApi/gameBets":"KY",
+            "https://nihaohpt.wxqq888.com/LCApi/gameBets":"LC",
+           }
 
 cj_interval = 120
 

@@ -31,15 +31,26 @@ class Collect_handle(object):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
     def handle(self):
-        get_data = self.get_url()
-        # get_data = json.loads(settings.get_data)
-        if get_data["err"] == 0:
-            self.save_local(get_data)
-            date_list = self.analyze_json(get_data["data"])
-            self.write_mongo(date_list)
-        else:
-            print("无数据")
+        for name,url in settings.GET_URL.items:
+            get_data = self.get_url(url)
 
+            if get_data["err"] == 0:
+                self.save_local(get_data)
+                date_list = self.analyze_json(get_data["data"])
+                self.write_mongo(date_list,name)
+            else:
+                print("无数据")
+            self._p()
+    def _p(self):
+        path = "../file/20190416/"
+        file_Iterator = os.walk(path)
+        for item in file_Iterator:
+            for file_name in item[2]:
+                print("校队",file_name)
+                with open("%s%s" % (path, file_name), 'r') as f:
+                    for link in f.readlines():
+                        date_list = self.analyze_json(link)
+                        self.write_mongo(date_list, "KY")
     def save_local(self,date):
         file_path = "../file/%s/" %(
             datetime.datetime.now().strftime("%Y%m%d"),
@@ -48,32 +59,30 @@ class Collect_handle(object):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
-    def get_url(self):
-        get_data = requests.get(settings.GET_URL).text
+    def get_url(self,url):
+        get_data = requests.get(url).text
         re_list = json.loads(get_data)
         return re_list
-    def write_mongo(self,date_list):
+    def write_mongo(self,date_list,web_name):
         #写入mongo
         for date in date_list:
             print(date)
             game_id = date["GameID"]
-            game_type = date["KindID"]
             site_name = self.get_site_name(date['Accounts'])
-            channelID = date["ChannelID"]
             if not site_name:
                 self.logs.write_err("ID:%d中%s解析错误")
                 continue
-            table_name = "%s_%s_%s" %(channelID,game_type,site_name)
+            table_name = "%s_%s" %(web_name,site_name)
             table_obj = self.mongo_obj[table_name]
             if not table_obj.find_one({"GameID":game_id}):
                 if not table_obj.insert(date):
-                    print("mongo:ID:%s写入失败" %channelID)
-                    self.logs.write_err("mongo:ID:%s写入失败" %channelID)
+                    print("mongo:ID:%s写入失败" %game_id)
+                    self.logs.write_err("mongo:ID:%s写入失败" %game_id)
                 else:
-                    self.logs.write_err("mongo:ID:%s写入成功" % channelID)
-                    print("mongo:ID:%s写入成功" %channelID)
+                    self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
+                    print("mongo:ID:%s写入成功" %game_id)
             else:
-                print("mongo:ID:%s已写入" %channelID)
+                print("mongo:ID:%s已写入" %game_id)
     def analyze_json(self,file_list):
         ##解析xml数据
         re_list = []
@@ -83,7 +92,10 @@ class Collect_handle(object):
             re_list.append(dict.fromkeys(keys))   ##生成空的字典
         for key,value in file_list["list"].items():
             for item in value:       ##循环每个字段的列表
-                re_list[count][key] = item
+                try:
+                    re_list[count][key] = float(item)
+                except ValueError:
+                    re_list[count][key] = item
                 count+=1
             else:
                 count=0
