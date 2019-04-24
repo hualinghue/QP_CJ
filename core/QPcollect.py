@@ -16,9 +16,6 @@ class Collect(object):
             return
         elif self.sys_args[1] == "start":
             self.forever_run()
-        elif self.sys_args[1].isupper():
-            collect_obj = Collect_handle(self.sys_args[2])
-            collect_obj.proofread(time=self.sys_args[2],site_name=self.sys_args[1])
         else:
             print("参数1错误")
     def forever_run(self):
@@ -27,13 +24,15 @@ class Collect(object):
                 print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),"   开始采集")
                 collect_obj = Collect_handle()
                 collect_obj.handle()
+                self.last_time = datetime.datetime.now().timestamp()
 
 class Collect_handle(object):
     def __init__(self):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
     def handle(self):
-        get_data = self.get_url()
+        # get_data = self.get_url()
+        get_data = settings.get_data
         if get_data["err"] == 0:
             self.save_local(get_data)
             date_list = self.analyze_json(get_data["data"])
