@@ -44,6 +44,7 @@ class Collect_handle(object):
         path = "../file/20190416/"
         file_Iterator = os.walk(path)
         for item in file_Iterator:
+            print(item)
             for file_name in item[2]:
                 print("校队",file_name)
                 with open("%s%s" % (path, file_name), 'r') as f:
