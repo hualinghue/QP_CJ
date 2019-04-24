@@ -32,8 +32,7 @@ class Collect_handle(object):
         self.link_mongo()
     def handle(self):
         # get_data = self.get_url()
-        get_data = settings.get_data
-        json.loads(get_data)
+        get_data = json.loads(settings.get_data)
         print(get_data)
         print(get_data["err"],type(get_data["err"]))
         if get_data["err"] == 0:
