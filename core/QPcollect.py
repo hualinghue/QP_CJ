@@ -47,8 +47,7 @@ class Collect_handle(object):
         file_Iterator = os.walk(path)
         print(file_Iterator)
         for item in file_Iterator:
-            print(item)
-            for file_name in item[2]:
+            for file_name in item[1]:
                 print("校队",file_name)
                 with open("%s%s" % (path, file_name), 'r') as f:
                     for link in f.readlines():
