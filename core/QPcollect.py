@@ -20,6 +20,7 @@ class Collect(object):
             print("参数1错误")
     def forever_run(self):
         while True:
+            print("开始")
             if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
                 print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),"   开始采集")
                 collect_obj = Collect_handle()
@@ -39,10 +40,12 @@ class Collect_handle(object):
                 self.write_mongo(date_list,name)
             else:
                 print("无数据")
+        print("校队")
         self._p()
     def _p(self):
         path = "../file/20190416/"
         file_Iterator = os.walk(path)
+        print(file_Iterator)
         for item in file_Iterator:
             print(item)
             for file_name in item[2]:
