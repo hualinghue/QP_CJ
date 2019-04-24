@@ -33,6 +33,7 @@ class Collect_handle(object):
     def handle(self):
         # get_data = self.get_url()
         get_data = settings.get_data
+        print(get_data["err"],type(get_data["err"]))
         if get_data["err"] == 0:
             self.save_local(get_data)
             date_list = self.analyze_json(get_data["data"])
