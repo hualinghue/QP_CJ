@@ -39,7 +39,7 @@ class Collect_handle(object):
                 self.write_mongo(date_list,name)
             else:
                 print("无数据")
-            self._p()
+        self._p()
     def _p(self):
         path = "../file/20190416/"
         file_Iterator = os.walk(path)
