@@ -44,7 +44,7 @@ class Collect_handle(object):
 
     def save_local(self,date):
         file_path = "../file/%s/%s" %(
-            datetime.datetime.now().strftime("%Y-%m-%d"),
+            datetime.datetime.now().strftime("%Y%m%d"),
             datetime.datetime.now().strftime("%H:%M:%S"),
         )
         if not os.path.exists(file_path):
