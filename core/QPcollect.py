@@ -44,6 +44,8 @@ class Collect_handle(object):
 
     def data_handle(self,data,name):
         get_data = self.get_url(data)
+        for k,v in get_data.items():
+            print(k,v)
         print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
