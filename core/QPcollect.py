@@ -64,8 +64,7 @@ class Collect_handle(object):
     def get_url(self,data):
         get_data = Get_url.Get_url(**data)
         print(get_data)
-        re_list = json.loads(get_data)
-        return re_list
+        return get_data
     def write_mongo(self,date_list,web_name):
         #写入mongo
         for date in date_list:

@@ -1,7 +1,7 @@
 from Crypto.Cipher import AES
 import base64
 import hashlib,requests
-import time
+import time,json
 class Get_url(object):
     def __init__(self,**kwargs):
         self.url = kwargs["GET_URL"]   #请求的url
@@ -25,7 +25,7 @@ class Get_url(object):
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
         re_text = requests.get(url, headers=headers).text
         print(re_text)
-        return re_text
+        return json.loads(re_text)
 
     def md5_encrypt(self,data):
         hl = hashlib.md5()
