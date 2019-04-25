@@ -23,7 +23,9 @@ class Get_url(object):
                                                             md5_str)
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'}
-        return requests.get(url, headers=headers).text
+        re_text = requests.get(url, headers=headers).text
+        print(re_text)
+        return re_text
 
     def md5_encrypt(self,data):
         hl = hashlib.md5()
