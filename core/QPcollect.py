@@ -30,21 +30,27 @@ class Collect_handle(object):
     def __init__(self):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
-    def handle(self):
+    def handle(self,url_type=None):
         # print("校队")
         # self._p()
         for name,data in settings.GET_URL.items():
-            get_data = self.get_url(data)
-            if get_data.get("s",None):
-                self.save_local(get_data)
-                date_list = self.analyze_json(get_data["d"])
-                if not date_list:
-                    print("无数据")
-                    return
-                self.write_mongo(date_list,name)
-            else:
-                time.sleep(5)
-                self.handle()
+            get_data = self.data_handle(data,name)
+            self.save_local(get_data)
+            date_list = self.analyze_json(get_data["d"])
+            if not date_list:
+                print("无数据")
+                return
+            self.write_mongo(date_list, name)
+            
+    def data_handle(self,data,name):
+        get_data = self.get_url(data)
+        if not get_data.get("s", None):
+            time.sleep(5)
+            self.data_handle(data, name)
+        if get_data['d']['code'] not in (0, 16):
+            time.sleep(5)
+            self.data_handle(data, name)
+        return get_data
 
     def _p(self):
         path = "../file/20190424/"
@@ -67,7 +73,6 @@ class Collect_handle(object):
             f.write(json.dumps(date))
     def get_url(self,data):
         get_data = Get_url.Get_url(**data)
-        print(get_data.handle())
         return get_data.handle()
     def write_mongo(self,date_list,web_name):
         #写入mongo
