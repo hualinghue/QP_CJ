@@ -62,7 +62,7 @@ class Collect_handle(object):
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
     def get_url(self,data):
-        get_data = Get_url(data)
+        get_data = Get_url.Get_url(**data)
         print(get_data)
         re_list = json.loads(get_data)
         return re_list
