@@ -28,7 +28,6 @@ class Collect_handle(object):
             date_list = self.analyze_json(get_data["d"])
             if not date_list:
                 print("无数据")
-                return
             self.write_mongo(date_list, name)
 
     def data_handle(self,data,name):
