@@ -4,10 +4,10 @@ import hashlib,requests
 import time
 class Get_url(object):
     def __init__(self,**kwargs):
-        self.url = kwargs["url"]   #请求的url
-        self.key = kwargs["key"]     # 加密EAS时使用的key，只能是长度16,24和32的字符串
-        self.md5_key = kwargs["md5_key"]  # 加密md5时使用的key
-        self.agent =  kwargs["agent"]     #第三方提供的编码
+        self.url = kwargs["GET_URL"]   #请求的url
+        self.key = kwargs["EAS_KEY"]     # 加密EAS时使用的key，只能是长度16,24和32的字符串
+        self.md5_key = kwargs["MD5_KEY"]  # 加密md5时使用的key
+        self.agent =  kwargs["AGENT"]     #第三方提供的编码
         self.now_time = int(round(time.time() * 1000))
         self.handle()
     def handle(self):
