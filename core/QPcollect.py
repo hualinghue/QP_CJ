@@ -19,41 +19,27 @@ class Collect_handle(object):
     def __init__(self):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
-    def handle(self,url_type=None):
+    def handle(self):
         # print("校队")
         # self._p()
         for name,data in settings.GET_URL.items():
             get_data = self.data_handle(data,name)
-            self.save_local(get_data)
             date_list = self.analyze_json(get_data["d"])
             if not date_list:
                 print("无数据")
+                continue
+            self.save_local(get_data)
             self.write_mongo(date_list, name)
-
     def data_handle(self,data,name):
         get_data = self.get_url(data)
         print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
             return self.data_handle(data, name)
-
-        print(int(get_data['d']['code']))
         if int(get_data['d']['code']) not in (0, 16):
             time.sleep(5)
             self.data_handle(data, name)
         return get_data
-
-    def _p(self):
-        path = "../file/20190424/"
-        file_Iterator = os.walk(path)
-        for item in file_Iterator:
-            for file_name in item[2]:
-                print("校队",file_name)
-                with open("%s%s" % (path, file_name), 'r') as f:
-                    for link in f.readlines():
-                        date = json.loads(link)
-                        date_list = self.analyze_json(date["data"])
-                        self.write_mongo(date_list, "KY")
     def save_local(self,date):
         file_path = "../file/%s/" %(
             datetime.datetime.now().strftime("%Y%m%d"),
