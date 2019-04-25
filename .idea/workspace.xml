@@ -31,15 +31,13 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="564">
-              <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+            <state relative-caret-position="598">
+              <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#1098#1485#0" />
                 <element signature="e#1503#1876#0" />
                 <element signature="e#1468#1761#0" />
                 <element signature="e#2314#2414#0" />
-                <element signature="e#2469#3247#0" />
                 <element signature="e#2550#2928#0" />
                 <element signature="e#3189#3331#0" />
                 <element signature="e#3415#4006#0" />
@@ -267,12 +265,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554977397733</updated>
-      <workItem from="1556042571876" duration="23895000" />
+      <workItem from="1556042571876" duration="24136000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23895000" />
+    <option name="totallyTimeSpent" value="24136000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -423,15 +421,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="564">
-          <caret line="97" column="25" selection-start-line="97" selection-start-column="25" selection-end-line="97" selection-end-column="25" />
+        <state relative-caret-position="598">
+          <caret line="74" column="8" selection-start-line="74" selection-start-column="8" selection-end-line="74" selection-end-column="8" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#1098#1485#0" />
             <element signature="e#1503#1876#0" />
             <element signature="e#1468#1761#0" />
             <element signature="e#2314#2414#0" />
-            <element signature="e#2469#3247#0" />
             <element signature="e#2550#2928#0" />
             <element signature="e#3189#3331#0" />
             <element signature="e#3415#4006#0" />

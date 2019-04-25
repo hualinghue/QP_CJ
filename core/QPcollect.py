@@ -28,8 +28,8 @@ class Collect_handle(object):
             if not date_list:
                 print("无数据")
                 continue
-            self.save_local(get_data)
-            self.write_mongo(date_list, name)
+            if self.write_mongo(date_list, name):
+                self.save_local(get_data)
     def data_handle(self,data,name):
         get_data = self.get_url(data)
         print(name,get_data)
@@ -53,6 +53,7 @@ class Collect_handle(object):
         return get_data.handle()
     def write_mongo(self,date_list,web_name):
         #写入mongo
+        Judge = False
         for date in date_list:
             print(date)
             game_id = date["GameID"]
@@ -69,8 +70,11 @@ class Collect_handle(object):
                 else:
                     self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
                     print("mongo:ID:%s写入成功" %game_id)
+                    Judge = True
             else:
                 print("mongo:ID:%s已写入" %game_id)
+        return Judge
+
     def analyze_json(self,file_list):
         ##解析xml数据
         re_list = []
