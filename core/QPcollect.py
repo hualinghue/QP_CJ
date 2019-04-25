@@ -8,16 +8,6 @@ class Collect(object):
     def __init__(self,sys_args):
         self.sys_args=sys_args
         self.last_time = 0
-        self.command_allowcator()
-    def command_allowcator(self):
-        '''分检用户输入的不同指令'''
-        if len(self.sys_args)<3:
-            print("缺少参数")
-            return
-        elif self.sys_args[1] == "start":
-            self.forever_run()
-        else:
-            print("参数1错误")
     def forever_run(self):
         while True:
             if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
@@ -44,6 +34,7 @@ class Collect_handle(object):
 
     def data_handle(self,data,name):
         get_data = self.get_url(data)
+        print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
             self.data_handle(data, name)

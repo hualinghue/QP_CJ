@@ -5,4 +5,5 @@ sys.path.append(BASE_DIR)
 from core import QPcollect
 
 if __name__ == "__main__":
-    client = QPcollect.Collect(sys.argv)
+    client = QPcollect.Collect()
+    client.forever_run()
