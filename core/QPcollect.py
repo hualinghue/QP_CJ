@@ -63,8 +63,8 @@ class Collect_handle(object):
             f.write(json.dumps(date))
     def get_url(self,data):
         get_data = Get_url.Get_url(**data)
-        print(get_data)
-        return get_data
+        print(get_data.handle())
+        return get_data.handle()
     def write_mongo(self,date_list,web_name):
         #写入mongo
         for date in date_list:
