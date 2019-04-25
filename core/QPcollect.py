@@ -2,8 +2,8 @@ import datetime,json,re,os
 from conf import settings
 from core import log_handle
 from pymongo import MongoClient
-import requests
 from core import Get_url
+import time
 class Collect(object):
     def __init__(self,sys_args):
         self.sys_args=sys_args
@@ -38,9 +38,13 @@ class Collect_handle(object):
             if get_data.get("s",None):
                 self.save_local(get_data)
                 date_list = self.analyze_json(get_data["d"])
+                if not date_list:
+                    print("无数据")
+                    return
                 self.write_mongo(date_list,name)
             else:
-                print("无数据")
+                time.sleep(5)
+                self.handle()
 
     def _p(self):
         path = "../file/20190424/"
@@ -88,19 +92,20 @@ class Collect_handle(object):
     def analyze_json(self,file_list):
         ##解析xml数据
         re_list = []
-        count = 0
-        keys = file_list["list"].keys()
-        for i in range(file_list["count"]):
-            re_list.append(dict.fromkeys(keys))   ##生成空的字典
-        for key,value in file_list["list"].items():
-            for item in value:       ##循环每个字段的列表
-                try:
-                    re_list[count][key] = float(item)
-                except ValueError:
-                    re_list[count][key] = item
-                count+=1
-            else:
-                count=0
+        if file_list.get("list",None):
+            count = 0
+            keys = file_list["list"].keys()
+            for i in range(file_list["count"]):
+                re_list.append(dict.fromkeys(keys))   ##生成空的字典
+            for key,value in file_list["list"].items():
+                for item in value:       ##循环每个字段的列表
+                    try:
+                        re_list[count][key] = float(item)
+                    except ValueError:
+                        re_list[count][key] = item
+                    count+=1
+                else:
+                    count=0
         return re_list
     def get_site_name(self,site_name):
         req_name = re.search(r"_(\d\d\d)_", site_name)
