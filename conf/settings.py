@@ -1,8 +1,8 @@
 
-DB_USER = "video_cj"
+DB_USER = "cj_man"
 DB_PASSWORD = "sSDm_lizdmOggz"
 DB_PORT = 27017
-DB_NAME = "cj_man"
+DB_NAME = "video_cj"
 DB_HOST = "10.8.63.117"
 
 url_1 = "https://nihaohpt.wxqq888.com/KYApi/gameBets"
