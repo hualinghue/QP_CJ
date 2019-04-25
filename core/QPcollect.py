@@ -3,7 +3,7 @@ from conf import settings
 from core import log_handle
 from pymongo import MongoClient
 import requests
-
+from core import Get_url
 class Collect(object):
     def __init__(self,sys_args):
         self.sys_args=sys_args
@@ -31,13 +31,13 @@ class Collect_handle(object):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
     def handle(self):
-        print("校队")
-        self._p()
-        for url,name in settings.GET_URL.items():
-            get_data = self.get_url(url)
-            if get_data["err"] == 0:
+        # print("校队")
+        # self._p()
+        for name,data in settings.GET_URL.items():
+            get_data = self.get_url(data)
+            if get_data.get("s",None):
                 self.save_local(get_data)
-                date_list = self.analyze_json(get_data["data"])
+                date_list = self.analyze_json(get_data["d"])
                 self.write_mongo(date_list,name)
             else:
                 print("无数据")
@@ -61,8 +61,9 @@ class Collect_handle(object):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
-    def get_url(self,url):
-        get_data = requests.get(url).text
+    def get_url(self,data):
+        get_data = Get_url(data)
+        print(get_data)
         re_list = json.loads(get_data)
         return re_list
     def write_mongo(self,date_list,web_name):
