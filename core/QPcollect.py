@@ -5,8 +5,7 @@ from pymongo import MongoClient
 from core import Get_url
 import time
 class Collect(object):
-    def __init__(self,sys_args):
-        self.sys_args=sys_args
+    def __init__(self):
         self.last_time = 0
     def forever_run(self):
         while True:
@@ -130,6 +129,3 @@ class Collect_handle(object):
             self.logs.write_err("连接mongo失败")
 
 
-
-collect_obj = Collect_handle()
-collect_obj.handle()
