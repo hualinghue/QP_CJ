@@ -48,7 +48,7 @@ class Collect_handle(object):
         if not get_data.get("s", None):
             time.sleep(5)
             self.data_handle(data, name)
-        if get_data['d']['code'] not in (0, 16):
+        if int(get_data['d']['code']) not in (0, 16):
             time.sleep(5)
             self.data_handle(data, name)
         return get_data
