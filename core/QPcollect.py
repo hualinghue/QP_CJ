@@ -41,9 +41,10 @@ class Collect_handle(object):
                 print("无数据")
                 return
             self.write_mongo(date_list, name)
-            
+
     def data_handle(self,data,name):
         get_data = self.get_url(data)
+        print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
             self.data_handle(data, name)
