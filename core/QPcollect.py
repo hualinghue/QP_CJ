@@ -61,7 +61,7 @@ class Collect_handle(object):
             if not site_name:
                 self.logs.write_err("ID:%d中%s解析错误")
                 continue
-            table_name = "%s_%s" %(web_name,site_name)
+            table_name = "%s_%s_%s" %(web_name,"bets",site_name)
             table_obj = self.mongo_obj[table_name]
             if not table_obj.find_one({"GameID":game_id}):
                 if not table_obj.insert(date):
