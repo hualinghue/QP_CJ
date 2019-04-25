@@ -44,12 +44,10 @@ class Collect_handle(object):
 
     def data_handle(self,data,name):
         get_data = self.get_url(data)
-        for k,v in get_data.items():
-            print("%s=%s"%(k,v))
-        print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
             self.data_handle(data, name)
+        print(int(get_data['d']['code']))
         if int(get_data['d']['code']) not in (0, 16):
             time.sleep(5)
             self.data_handle(data, name)
