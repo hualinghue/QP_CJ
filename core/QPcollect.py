@@ -19,32 +19,32 @@ class Collect(object):
             if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
                 print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),"   开始采集")
                 collect_obj = Collect_handle()
-                collect_obj.handle(round(time.time() * 1000))
+                collect_obj.handle()
                 self.last_time = datetime.datetime.now().timestamp()
 
 class Collect_handle(object):
     def __init__(self):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
-    def handle(self,startTime):
+    def handle(self):
         # print("校队")
         # self._p()
         for name,data in settings.GET_URL.items():
-            get_data = self.data_handle(data,name,startTime)
+            get_data = self.data_handle(data,name,)
             date_list = self.analyze_json(get_data["d"])
             if not date_list:
                 print("无数据")
                 continue
             self.write_mongo(date_list, name)
-    def data_handle(self,data,name,startTime):
-        get_data = self.get_url(data,startTime)
+    def data_handle(self,data,name,):
+        get_data = self.get_url(data,)
         print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
-            return self.data_handle(data, name,startTime)
+            return self.data_handle(data, name,)
         if int(get_data['d']['code']) not in (0, 16):
             time.sleep(5)
-            self.data_handle(data, name,startTime)
+            self.data_handle(data, name,)
         return get_data
     def save_local(self,date):
         file_path = "../file/%s/" %(
@@ -54,7 +54,7 @@ class Collect_handle(object):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
-    def get_url(self,data,startTime):
+    def get_url(self,data,startTime=int(round(time.time() * 1000))):
         get_data = Get_url.Get_url(**data)
         return get_data.handle(startTime)
     def write_mongo(self,date_list,web_name):
