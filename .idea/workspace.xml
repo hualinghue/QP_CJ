@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f89f1e-81a9-4c62-9fb8-4224bdd973d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/Get_url.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Get_url.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/QPcollect.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/QPcollect.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,11 +28,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="525">
-              <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
+              <caret line="51" column="45" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#1468#1761#0" />
@@ -55,11 +54,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/Get_url.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="260">
-              <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
+            <state relative-caret-position="308">
+              <caret line="14" column="79" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -110,8 +109,8 @@
         <option value="$PROJECT_DIR$/bin/get_data.py" />
         <option value="$PROJECT_DIR$/conf/settings.py" />
         <option value="$PROJECT_DIR$/bin/run.py" />
-        <option value="$PROJECT_DIR$/core/QPcollect.py" />
         <option value="$PROJECT_DIR$/core/Get_url.py" />
+        <option value="$PROJECT_DIR$/core/QPcollect.py" />
       </list>
     </option>
   </component>
@@ -265,12 +264,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554977397733</updated>
-      <workItem from="1556042571876" duration="26935000" />
+      <workItem from="1556042571876" duration="27068000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26935000" />
+    <option name="totallyTimeSpent" value="27068000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -416,10 +415,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/Get_url.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="14" column="79" selection-start-line="14" selection-start-column="79" selection-end-line="14" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
-          <caret line="51" column="56" selection-start-line="51" selection-start-column="56" selection-end-line="51" selection-end-column="56" />
+          <caret line="51" column="45" selection-start-line="51" selection-start-column="45" selection-end-line="51" selection-end-column="45" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#1468#1761#0" />
@@ -427,16 +436,6 @@
             <element signature="e#2550#2928#0" />
             <element signature="e#3189#3331#0" />
             <element signature="e#3415#4006#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/Get_url.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
           </folding>
         </state>
       </provider>
