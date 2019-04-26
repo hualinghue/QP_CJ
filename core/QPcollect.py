@@ -19,25 +19,25 @@ class Collect_handle(object):
     def __init__(self):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
-    def handle(self,time):
+    def handle(self,startTime):
         # print("校队")
         # self._p()
         for name,data in settings.GET_URL.items():
-            get_data = self.data_handle(data,name,time)
+            get_data = self.data_handle(data,name,startTime)
             date_list = self.analyze_json(get_data["d"])
             if not date_list:
                 print("无数据")
                 continue
             self.write_mongo(date_list, name)
-    def data_handle(self,data,name,time):
-        get_data = self.get_url(data,time)
+    def data_handle(self,data,name,startTime):
+        get_data = self.get_url(data,startTime)
         print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
-            return self.data_handle(data, name)
+            return self.data_handle(data, name,startTime)
         if int(get_data['d']['code']) not in (0, 16):
             time.sleep(5)
-            self.data_handle(data, name)
+            self.data_handle(data, name,startTime)
         return get_data
     def save_local(self,date):
         file_path = "../file/%s/" %(
