@@ -5,8 +5,15 @@ from pymongo import MongoClient
 from core import Get_url
 import time
 class Collect(object):
-    def __init__(self):
+    def __init__(self,sys_args):
         self.last_time = 0
+        self.sys_args = sys_args
+        self.command_allowcator()
+
+
+    def command_allowcator(self):
+       print(self.sys_args)
+
     def forever_run(self):
         while True:
             if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
@@ -127,5 +134,8 @@ class Collect_handle(object):
             self.logs.write_err("连接mongo失败")
 
     def proofread(self,startTime,number):
-        pass
+            interval =0
+            for i in range(int(number)):
+                self.handle(str(int(startTime)+interval))
+                interval +=5 * 60 * 1000
 
