@@ -12,6 +12,7 @@ class Get_url(object):
     def handle(self):
         data = "s=6&startTime=%s&endTime=%s" % \
                (str(self.now_time - 3 * 60 * 1000),str(self.now_time),)
+        data = "s=6&startTime=%s&endTime=%s" %("1556124617705","1556124917705")
         encrypted_text = self.aes_encrypt(data)  #eas加密
         md5_str = self.md5_encrypt(str(self.agent) + str(self.now_time) + self.md5_key)  #md5加密
         url = "%s?agent=%s&timestamp=%s&param=%s&key=%s" % (

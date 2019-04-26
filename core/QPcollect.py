@@ -28,8 +28,7 @@ class Collect_handle(object):
             if not date_list:
                 print("无数据")
                 continue
-            if self.write_mongo(date_list, name):
-                self.save_local(get_data)
+            self.write_mongo(date_list, name)
     def data_handle(self,data,name):
         get_data = self.get_url(data)
         print(name,get_data)
@@ -53,28 +52,38 @@ class Collect_handle(object):
         return get_data.handle()
     def write_mongo(self,date_list,web_name):
         #写入mongo
-        Judge = False
+        # Judge = False
         for date in date_list:
             print(date)
             game_id = date["GameID"]
             site_name = self.get_site_name(date['Accounts'])
             if not site_name:
-                self.logs.write_err("ID:%d中%s解析错误")
+                self.logs.write_err("ID:%s中%s解析错误"%(game_id,date["Accounts"]))
                 continue
             table_name = "%s_%s_%s" %(web_name,"bets",site_name)
             table_obj = self.mongo_obj[table_name]
-            if not table_obj.find_one({"GameID":game_id}):
-                if not table_obj.insert(date):
-                    print("mongo:ID:%s写入失败" %game_id)
-                    self.logs.write_err("mongo:ID:%s写入失败" %game_id)
-                else:
-                    self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
-                    print("mongo:ID:%s写入成功" %game_id)
-                    Judge = True
-            else:
-                print("mongo:ID:%s已写入" %game_id)
-        return Judge
+            if table_obj.count() == 0:
+                table_obj.ensure_index("GameID",unique=True)
 
+            try:
+                self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
+                print("mongo:ID:%s写入成功" % game_id)
+                table_obj.insert(date)
+            except Exception as e:
+                print("mongo:ID:%s写入失败" % game_id)
+                self.logs.write_err("mongo:ID:%s写入失败" % game_id)
+
+            # if not table_obj.find_one({"GameID":game_id}):
+            #     if not table_obj.insert(date):
+            #         print("mongo:ID:%s写入失败" %game_id)
+            #         self.logs.write_err("mongo:ID:%s写入失败" %game_id)
+            #     else:
+            #         self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
+            #         print("mongo:ID:%s写入成功" %game_id)
+            #         Judge = True
+            # else:
+            #     print("mongo:ID:%s已写入" %game_id)
+        # return Judge
     def analyze_json(self,file_list):
         ##解析xml数据
         re_list = []
