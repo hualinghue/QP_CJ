@@ -12,25 +12,25 @@ class Collect(object):
             if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
                 print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),"   开始采集")
                 collect_obj = Collect_handle()
-                collect_obj.handle()
+                collect_obj.handle(round(time.time() * 1000))
                 self.last_time = datetime.datetime.now().timestamp()
 
 class Collect_handle(object):
     def __init__(self):
         self.logs = log_handle.Log_handle()
         self.link_mongo()
-    def handle(self):
+    def handle(self,time):
         # print("校队")
         # self._p()
         for name,data in settings.GET_URL.items():
-            get_data = self.data_handle(data,name)
+            get_data = self.data_handle(data,name,time)
             date_list = self.analyze_json(get_data["d"])
             if not date_list:
                 print("无数据")
                 continue
             self.write_mongo(date_list, name)
-    def data_handle(self,data,name):
-        get_data = self.get_url(data)
+    def data_handle(self,data,name,time):
+        get_data = self.get_url(data,time)
         print(name,get_data)
         if not get_data.get("s", None):
             time.sleep(5)
@@ -47,9 +47,9 @@ class Collect_handle(object):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
-    def get_url(self,data):
+    def get_url(self,data,time):
         get_data = Get_url.Get_url(**data)
-        return get_data.handle(round(time.time() * 1000))
+        return get_data.handle(time)
     def write_mongo(self,date_list,web_name):
         #写入mongo
         # Judge = False
@@ -126,4 +126,6 @@ class Collect_handle(object):
             print('连接mongo失败',e)
             self.logs.write_err("连接mongo失败")
 
+    def proofread(self,startTime,number):
+        pass
 
