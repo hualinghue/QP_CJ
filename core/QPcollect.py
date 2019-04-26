@@ -256,5 +256,6 @@ class Collect_proofread(object):
                 for name, data in settings.GET_URL.items():
                     get_data = self.get_url(data,startTime)
                     self.data_handle(get_data,name)
+                    time.sleep(10)
                 startTime =int(startTime) + 5 * 60 * 1000
 
