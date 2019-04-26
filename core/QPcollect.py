@@ -142,7 +142,7 @@ class Collect_proofread(object):
         self.num = sys_args[2]
         self.logs = log_handle.Log_handle()
         self.link_mongo()
-        self.handle()
+        self.proofread()
     def handle(self):
         # print("校队")
         # self._p()
