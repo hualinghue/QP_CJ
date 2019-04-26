@@ -54,9 +54,9 @@ class Collect_handle(object):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
-    def get_url(self,data,startTime=int(round(time.time() * 1000))):
+    def get_url(self,data):
         get_data = Get_url.Get_url(**data)
-        return get_data.handle(startTime)
+        return get_data.handle()
     def write_mongo(self,date_list,web_name):
         #写入mongo
         # Judge = False
