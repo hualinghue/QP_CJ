@@ -10,6 +10,7 @@ class Get_url(object):
         self.agent =  kwargs["AGENT"]     #第三方提供的编码
         self.now_time = int(round(time.time() * 1000))
     def handle(self,endTime):
+        self.now_time = endTime
         data = "s=6&startTime=%s&endTime=%s" % \
                (str(int(endTime) - 5 * 60 * 1000),endTime)
         # data = "s=6&startTime=%s&endTime=%s" %("1556124617705","1556124917705")

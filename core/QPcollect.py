@@ -49,7 +49,7 @@ class Collect_handle(object):
             f.write(json.dumps(date))
     def get_url(self,data):
         get_data = Get_url.Get_url(**data)
-        return get_data.handle(round(time.time() * 1000))
+        return get_data.handle("1556296530000")
     def write_mongo(self,date_list,web_name):
         #写入mongo
         # Judge = False
