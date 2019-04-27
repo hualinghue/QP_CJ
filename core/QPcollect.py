@@ -259,6 +259,7 @@ class Collect_proofread(object):
                         if self.data_handle(get_data,name):
                             break
                         startTime = int(startTime) + 1000
+                        print(startTime)
                     date_list = self.analyze_json(get_data["d"])
                     if not date_list:
                         print("无数据")

@@ -9,6 +9,7 @@ class Get_url(object):
         self.md5_key = kwargs["MD5_KEY"]  # 加密md5时使用的key
         self.agent =  kwargs["AGENT"]     #第三方提供的编码
     def handle(self,startTime=None):
+        print(self.key)
         self.now_time = startTime or int(round(time.time() * 1000))
         data = "s=6&startTime=%s&endTime=%s" % \
                (str(int(self.now_time) - 5 * 60 * 1000),self.now_time)
