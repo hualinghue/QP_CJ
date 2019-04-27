@@ -17,7 +17,7 @@ class Get_url(object):
         url = "%s?agent=%s&timestamp=%s&param=%s&key=%s" % (
                                                             self.url,
                                                             self.agent,
-                                                            int(round(time.time() * 1000)),
+                                                            self.now_time,
                                                             bytes.decode(encrypted_text),
                                                             md5_str)
         headers = {
