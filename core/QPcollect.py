@@ -37,6 +37,7 @@ class Collect_handle(object):
             if not date_list:
                 print("无数据")
                 continue
+            self.save_local(get_data)
             self.write_mongo(date_list, name)
     def data_handle(self,data,name,):
         get_data = self.get_url(data,)
@@ -164,9 +165,7 @@ class Collect_proofread(object):
             return False
         return data
     def save_local(self,date):
-        file_path = "../file/%s/" %(
-            datetime.datetime.now().strftime("%Y%m%d"),
-        )
+        file_path = "../file/proofread/"
         if not os.path.exists(file_path):
             os.makedirs(file_path)
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
@@ -249,7 +248,6 @@ class Collect_proofread(object):
         except Exception as e:
             print('连接mongo失败',e)
             self.logs.write_err("连接mongo失败")
-
     def proofread(self):
             startTime = self.startTime
             for i in range(int(self.num)):
@@ -263,6 +261,7 @@ class Collect_proofread(object):
                     if not date_list:
                         print("无数据")
                         continue
+                    self.save_local(get_data)
                     self.write_mongo(date_list, name)
                     time.sleep(5)
                 startTime =int(startTime) + 59 * 60 * 1000

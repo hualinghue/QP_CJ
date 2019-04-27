@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f89f1e-81a9-4c62-9fb8-4224bdd973d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/Get_url.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/Get_url.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/QPcollect.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/QPcollect.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,24 +31,30 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="261" selection-start-line="261" selection-end-line="261" />
+            <state relative-caret-position="480">
+              <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#157#908#0" />
-                <element signature="e#779#4939#0" />
                 <element signature="e#1085#1146#0" />
+                <element signature="e#768#1100#0" />
+                <element signature="e#1503#1876#0" />
                 <element signature="e#1468#1761#0" />
+                <element signature="e#1816#1908#0" />
                 <element signature="e#1984#2874#0" />
                 <element signature="e#2550#2928#0" />
                 <element signature="e#3189#3331#0" />
                 <element signature="e#3415#4006#0" />
+                <element signature="e#5181#9548#0" />
+                <element signature="e#5301#5624#0" />
+                <element signature="e#5671#5991#0" />
                 <element signature="e#6031#6327#0" />
                 <element signature="e#6364#6431#0" />
                 <element signature="e#6486#7862#0" />
                 <element signature="e#7909#8539#0" />
                 <element signature="e#8587#8729#0" />
                 <element signature="e#8764#9341#0" />
+                <element signature="e#9397#9548#0" />
               </folding>
             </state>
           </provider>
@@ -67,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/Get_url.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="117">
+              <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -99,6 +104,8 @@
       <find>print</find>
       <find>self.logs</find>
       <find>write_mongo</find>
+      <find>Get_url</find>
+      <find>save_local</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -119,8 +126,8 @@
         <option value="$PROJECT_DIR$/bin/get_data.py" />
         <option value="$PROJECT_DIR$/conf/settings.py" />
         <option value="$PROJECT_DIR$/bin/run.py" />
-        <option value="$PROJECT_DIR$/core/QPcollect.py" />
         <option value="$PROJECT_DIR$/core/Get_url.py" />
+        <option value="$PROJECT_DIR$/core/QPcollect.py" />
       </list>
     </option>
   </component>
@@ -274,12 +281,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554977397733</updated>
-      <workItem from="1556042571876" duration="32412000" />
+      <workItem from="1556042571876" duration="33130000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32412000" />
+    <option name="totallyTimeSpent" value="33130000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -427,32 +434,38 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="261" selection-start-line="261" selection-end-line="261" />
+        <state relative-caret-position="480">
+          <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#157#908#0" />
-            <element signature="e#779#4939#0" />
             <element signature="e#1085#1146#0" />
+            <element signature="e#768#1100#0" />
+            <element signature="e#1503#1876#0" />
             <element signature="e#1468#1761#0" />
+            <element signature="e#1816#1908#0" />
             <element signature="e#1984#2874#0" />
             <element signature="e#2550#2928#0" />
             <element signature="e#3189#3331#0" />
             <element signature="e#3415#4006#0" />
+            <element signature="e#5181#9548#0" />
+            <element signature="e#5301#5624#0" />
+            <element signature="e#5671#5991#0" />
             <element signature="e#6031#6327#0" />
             <element signature="e#6364#6431#0" />
             <element signature="e#6486#7862#0" />
             <element signature="e#7909#8539#0" />
             <element signature="e#8587#8729#0" />
             <element signature="e#8764#9341#0" />
+            <element signature="e#9397#9548#0" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/Get_url.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="5" column="31" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="117">
+          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
