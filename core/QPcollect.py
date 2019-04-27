@@ -57,7 +57,7 @@ class Collect_handle(object):
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
     def get_url(self,data):
-        get_data = Get_url.Get_url(**data)
+        get_data = Get_url.Get_url(interval=5,**data)
         return get_data.handle()
     def write_mongo(self,date_list,web_name):
         #写入mongo
@@ -172,7 +172,7 @@ class Collect_proofread(object):
         with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
             f.write(json.dumps(date))
     def get_url(self,data,starttime):
-        get_data = Get_url.Get_url(**data)
+        get_data = Get_url.Get_url(interval=59,**data)
         return get_data.handle(starttime)
     def write_mongo(self,date_list,web_name):
         #写入mongo
@@ -259,12 +259,11 @@ class Collect_proofread(object):
                         if self.data_handle(get_data,name):
                             break
                         startTime = int(startTime) + 1000
-                        print(startTime)
                     date_list = self.analyze_json(get_data["d"])
                     if not date_list:
                         print("无数据")
                         continue
                     self.write_mongo(date_list, name)
                     time.sleep(5)
-                startTime =int(startTime) + 5 * 60 * 1000
+                startTime =int(startTime) + 59 * 60 * 1000
 
