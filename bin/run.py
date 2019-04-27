@@ -6,4 +6,4 @@ from core import QPcollect
 
 if __name__ == "__main__":
     client = QPcollect.Collect(sys.argv)
-    client.forever_run()
+    # client.forever_run()

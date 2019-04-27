@@ -13,9 +13,9 @@ class Collect(object):
 
     def command_allowcator(self):
         if len(self.sys_args) == 3:
-            proof = Collect_proofread(self.sys_args)
-
-
+            Collect_proofread(self.sys_args)
+        else:
+            self.forever_run()
     def forever_run(self):
         while True:
             if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
@@ -259,6 +259,11 @@ class Collect_proofread(object):
                         if self.data_handle(get_data,name):
                             break
                         startTime = int(startTime) + 1000
-                        time.sleep(5)
+                    date_list = self.analyze_json(get_data["d"])
+                    if not date_list:
+                        print("无数据")
+                        continue
+                    self.write_mongo(date_list, name)
+                    time.sleep(5)
                 startTime =int(startTime) + 5 * 60 * 1000
 
