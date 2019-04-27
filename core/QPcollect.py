@@ -46,7 +46,7 @@ class Collect_handle(object):
             return self.data_handle(data, name,)
         if int(get_data['d']['code']) not in (0, 16):
             time.sleep(5)
-            self.data_handle(data, name,)
+            return self.data_handle(data, name,)
         return get_data
     def save_local(self,date):
         file_path = "../file/%s/" %(
@@ -158,10 +158,10 @@ class Collect_proofread(object):
         print(name,data)
         if not data.get("s", None):
             time.sleep(5)
-            return self.data_handle(data, name)
+            return False
         if int(data['d']['code']) not in (0, 16):
             time.sleep(5)
-            self.data_handle(data, name)
+            return False
         return data
     def save_local(self,date):
         file_path = "../file/%s/" %(
@@ -254,8 +254,11 @@ class Collect_proofread(object):
             startTime = self.startTime
             for i in range(int(self.num)):
                 for name, data in settings.GET_URL.items():
-                    get_data = self.get_url(data,startTime)
-                    self.data_handle(get_data,name)
-                    time.sleep(10)
+                    while True:
+                        get_data = self.get_url(data,startTime)
+                        if self.data_handle(get_data,name):
+                            break
+                        startTime = int(startTime) + 1000
+                        time.sleep(5)
                 startTime =int(startTime) + 5 * 60 * 1000
 
