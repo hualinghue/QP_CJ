@@ -23,11 +23,14 @@ class Get_url(object):
                                                             md5_str)
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36','Connection': 'close'}
-        try:
-            re_text = requests.get(url, headers=headers).text
-        except Exception as e:
-            time.sleep(5)
-            re_text = requests.get(url, headers=headers).text
+        while True:
+            try:
+                re_text = requests.get(url, headers=headers).text
+            except Exception as e:
+                time.sleep(5)
+                continue
+            if re_text:
+                break
         return json.loads(re_text)
 
     def md5_encrypt(self,data):
