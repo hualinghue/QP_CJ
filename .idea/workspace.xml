@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f89f1e-81a9-4c62-9fb8-4224bdd973d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/core/QPcollect.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/QPcollect.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -23,7 +23,7 @@
         <entry file="file://$PROJECT_DIR$/bin/run.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="216">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+              <caret line="9" selection-start-line="9" selection-end-line="9" />
             </state>
           </provider>
         </entry>
@@ -31,30 +31,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
+            <state relative-caret-position="3216">
               <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#157#908#0" />
-                <element signature="e#1085#1146#0" />
-                <element signature="e#768#1100#0" />
-                <element signature="e#1503#1876#0" />
-                <element signature="e#1468#1761#0" />
-                <element signature="e#1816#1908#0" />
-                <element signature="e#1984#2874#0" />
-                <element signature="e#2550#2928#0" />
-                <element signature="e#3189#3331#0" />
-                <element signature="e#3415#4006#0" />
-                <element signature="e#5181#9548#0" />
-                <element signature="e#5301#5624#0" />
-                <element signature="e#5671#5991#0" />
-                <element signature="e#6031#6327#0" />
-                <element signature="e#6364#6431#0" />
-                <element signature="e#6486#7862#0" />
-                <element signature="e#7909#8539#0" />
-                <element signature="e#8587#8729#0" />
-                <element signature="e#8764#9341#0" />
-                <element signature="e#9397#9548#0" />
               </folding>
             </state>
           </provider>
@@ -132,10 +112,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="350" />
-    <option name="y" value="55" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -281,21 +259,20 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1554977397733</updated>
-      <workItem from="1556042571876" duration="33130000" />
+      <workItem from="1556042571876" duration="33238000" />
+      <workItem from="1556864617049" duration="15000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33130000" />
+    <option name="totallyTimeSpent" value="33253000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.1502146" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Database Changes" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32921347" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.5614458" />
@@ -308,13 +285,14 @@
       <window_info anchor="bottom" id="Terminal" order="9" weight="0.32891566" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32891566" />
       <window_info anchor="bottom" id="Python Console" order="11" weight="0.32891566" />
-      <window_info anchor="right" id="R Packages" />
-      <window_info anchor="right" id="R Graphics" />
+      <window_info anchor="bottom" id="Database Changes" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" />
       <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="R Graphics" order="5" />
+      <window_info anchor="right" id="R Packages" order="6" />
     </layout>
     <layout-to-restore>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.10622317" />
@@ -347,13 +325,7 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/json/decoder.py" />
     <entry file="file://$PROJECT_DIR$/core/201904110000.xml" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/xml/dom/minidom.py" />
-    <entry file="file://$PROJECT_DIR$/conf/last_time.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="189" selection-start-column="189" selection-end-column="189" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/conf/last_time.txt" />
     <entry file="file://$PROJECT_DIR$/files/logs/error.log" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/imaplib.py" />
     <entry file="file://E:/Backstage/venv3/Lib/site-packages/pymongo/database.py" />
@@ -366,13 +338,7 @@
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37-32/Lib/re.py" />
     <entry file="file://E:/Backstage/venv3/Lib/site-packages/crypto/__init__.py" />
     <entry file="file://$PROJECT_DIR$/core/text.py" />
-    <entry file="file://$PROJECT_DIR$/bin/count_num.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="672">
-          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/count_num.py" />
     <entry file="file://$PROJECT_DIR$/bin/FTP.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -421,7 +387,17 @@
     <entry file="file://$PROJECT_DIR$/bin/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3216">
+          <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -429,36 +405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
           <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="139" column="32" selection-start-line="139" selection-start-column="32" selection-end-line="139" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#157#908#0" />
-            <element signature="e#1085#1146#0" />
-            <element signature="e#768#1100#0" />
-            <element signature="e#1503#1876#0" />
-            <element signature="e#1468#1761#0" />
-            <element signature="e#1816#1908#0" />
-            <element signature="e#1984#2874#0" />
-            <element signature="e#2550#2928#0" />
-            <element signature="e#3189#3331#0" />
-            <element signature="e#3415#4006#0" />
-            <element signature="e#5181#9548#0" />
-            <element signature="e#5301#5624#0" />
-            <element signature="e#5671#5991#0" />
-            <element signature="e#6031#6327#0" />
-            <element signature="e#6364#6431#0" />
-            <element signature="e#6486#7862#0" />
-            <element signature="e#7909#8539#0" />
-            <element signature="e#8587#8729#0" />
-            <element signature="e#8764#9341#0" />
-            <element signature="e#9397#9548#0" />
-          </folding>
         </state>
       </provider>
     </entry>
