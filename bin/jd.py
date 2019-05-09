@@ -53,7 +53,7 @@ data = {
                 "AGENT": 70936,
             }
 while True:
-    get_data = Get_url("1557331241000",**data)
+    get_data = Get_url("1557374441000",**data)
     re_data = get_data.handle()
     print(re_data)
     if not re_data.get("s", None):
