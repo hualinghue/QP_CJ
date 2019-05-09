@@ -54,7 +54,7 @@ data = {
             }
 now_time = int(round(time.time() * 1000))
 while True:
-    get_data = Get_url("1557383441000",**data)
+    get_data = Get_url(now_time*5*60* 60 * 1000,**data)
     re_data = get_data.handle()
     print(re_data)
     if not re_data.get("s", None):
