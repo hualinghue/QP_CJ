@@ -72,7 +72,7 @@ class Collect_handle(object):
                 continue
             table_name = "%s_%s_%s" %(web_name,"bets",site_name)
             table_obj = self.mongo_obj[table_name]
-
+            print(table_name)
             if table_obj.count() == 0:
                 table_obj.ensure_index("GameID",unique=True)
 
