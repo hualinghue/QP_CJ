@@ -89,7 +89,6 @@ class Collect_handle(object):
             except Exception as e:
                 print(e)
                 print("mongo:ID:%s写入失败" % game_id)
-                self.logs.write_err("mongo:ID:%s写入失败" % game_id)
 
             # if not table_obj.find_one({"GameID":game_id}):
             #     if not table_obj.insert(date):
