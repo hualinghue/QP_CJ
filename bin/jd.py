@@ -54,8 +54,8 @@ data = {
             }
 while True:
     now_time = int(round(time.time() * 1000))
-    print(str(now_time+1*60*60*1000))
-    get_data = Get_url(str(now_time+1*60* 60 * 1000),**data)
+    print(str(now_time-1*60*60*1000))
+    get_data = Get_url(str(now_time-1*60* 60 * 1000),**data)
     re_data = get_data.handle()
     print(re_data)
     if not re_data.get("s", None):
