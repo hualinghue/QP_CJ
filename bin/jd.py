@@ -52,6 +52,12 @@ data = {
                 "MD5_KEY":"B04569AF63BFAFA3",
                 "AGENT": 70936,
             }
-
-get_data = Get_url("1557331241000",**data)
-print(get_data.handle())
+while True:
+    get_data = Get_url("1557331241000",**data)
+    re_data = get_data.handle()
+    if not re_data.get("s", None):
+        time.sleep(5)
+    elif int(re_data['d']['code']) not in (0, 16):
+        time.sleep(5)
+    else:
+        break
