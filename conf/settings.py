@@ -1,7 +1,6 @@
 
-DB_USER = "root"
-# DB_PASSWORD = "sSDm_lizdmOggz"
-DB_PASSWORD = "mmnz_zawqG%lzk"
+DB_USER = "cj_man"
+DB_PASSWORD = "sSDm_lizdmOggz"
 DB_PORT = 27017
 DB_NAME = "video_cj"
 DB_HOST = "10.8.63.117"

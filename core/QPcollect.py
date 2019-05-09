@@ -75,10 +75,8 @@ class Collect_handle(object):
             if table_obj.count() == 0:
                 table_obj.ensure_index("GameID",unique=True)
 
-            print(table_name,date)
             try:
-                x = table_obj.insert_one(date,WriteConcern)
-                print(x)
+                x = table_obj.insert_one(date)
                 self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
                 print("mongo:ID:%s写入成功" % game_id)
 
