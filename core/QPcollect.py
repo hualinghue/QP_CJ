@@ -77,7 +77,7 @@ class Collect_handle(object):
 
             print(table_name,date)
             try:
-                x = table_obj.insert(date)
+                x = table_obj.insert_one(date)
                 print(x)
                 self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
                 print("mongo:ID:%s写入成功" % game_id)
