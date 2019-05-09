@@ -83,6 +83,7 @@ class Collect_handle(object):
                 print("mongo:ID:%s写入成功" % game_id)
 
             except Exception as e:
+                print(e)
                 print("mongo:ID:%s写入失败" % game_id)
                 self.logs.write_err("mongo:ID:%s写入失败" % game_id)
 
