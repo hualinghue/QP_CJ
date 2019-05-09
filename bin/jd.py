@@ -83,6 +83,9 @@ while True:
                 date_list = collect_obj.analyze_json(re_data['d'])
                 collect_obj.write_mongo(date_list,site_name)
                 break
+    start_time += 5*60*1000
+    if start_time < end_time:
+        break
 
 
 # def proofread(date,times):
