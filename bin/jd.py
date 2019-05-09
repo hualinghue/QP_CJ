@@ -76,6 +76,7 @@ for site_name,data in GET_URL.items():
             time.sleep(5)
         else:
             collect_obj = QPcollect.Collect_handle()
-            print(collect_obj.analyze_json(re_data['d']))
+            date_list = collect_obj.analyze_json(re_data['d'])
+            collect_obj.write_mongo(date_list,site_name)
             break
 

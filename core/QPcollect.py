@@ -39,7 +39,6 @@ class Collect_handle(object):
             if not date_list:
                 print("无数据")
                 continue
-            self.save_local(get_data)
             self.write_mongo(date_list, name)
     def data_handle(self,data,name,):
         get_data = self.get_url(data,)
@@ -52,12 +51,17 @@ class Collect_handle(object):
             return self.data_handle(data, name,)
         return get_data
     def save_local(self,date):
-        file_path = "../file/%s/" %(
+        # file_path = "../file/%s/" %(
+        #     datetime.datetime.now().strftime("%Y%m%d"),
+        # )
+        # if not os.path.exists(file_path):
+        #     os.makedirs(file_path)
+        # with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
+        #     f.write(json.dumps(date))
+        file_path = "../file/%s.txt" % (
             datetime.datetime.now().strftime("%Y%m%d"),
         )
-        if not os.path.exists(file_path):
-            os.makedirs(file_path)
-        with open(file_path+datetime.datetime.now().strftime("%H%M")+".txt",'w') as f:
+        with open(file_path, 'w') as f:
             f.write(json.dumps(date))
     def get_url(self,data):
         get_data = Get_url.Get_url(interval=5,**data)
@@ -85,6 +89,7 @@ class Collect_handle(object):
 
             try:
                 x = table_obj.insert_one(date)
+                self.save_local(date)
                 self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
                 print("mongo:ID:%s写入成功" % game_id)
 
