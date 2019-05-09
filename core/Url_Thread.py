@@ -1,7 +1,7 @@
 import threading
 import requests
 
-site_url_list = ["http://caiadmin.wxqq666.com","http://fxadmn.wxqq44.com/"]
+site_url_list = ["http://caiadmin.wxqq666.com",]
 
 def get_url(url):
     text = requests.get(url+"/ApiStat/auto").text
