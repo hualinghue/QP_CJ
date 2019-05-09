@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="10f89f1e-81a9-4c62-9fb8-4224bdd973d6" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/conf/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/conf/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/QPcollect.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/QPcollect.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,8 +31,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+            <state relative-caret-position="561">
+              <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
                 <element signature="e#177#840#0" />
@@ -269,12 +268,12 @@
       <updated>1554977397733</updated>
       <workItem from="1556042571876" duration="33238000" />
       <workItem from="1556864617049" duration="15000" />
-      <workItem from="1557307768997" duration="4146000" />
+      <workItem from="1557307768997" duration="5262000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37399000" />
+    <option name="totallyTimeSpent" value="38515000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -427,8 +426,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/QPcollect.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="81" lean-forward="true" selection-start-line="81" selection-end-line="81" />
+        <state relative-caret-position="561">
+          <caret line="80" column="38" lean-forward="true" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#177#840#0" />
