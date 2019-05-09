@@ -2,6 +2,7 @@ from Crypto.Cipher import AES
 import base64
 import hashlib,requests
 import time,json
+from core import QPcollect
 class Get_url(object):
     def __init__(self,start_time,**kwargs):
         self.url = kwargs["GET_URL"]   #请求的url
@@ -62,8 +63,8 @@ GET_URL = {"KY":{
 for site_name,data in GET_URL.items():
     while True:
         now_time = int(round(time.time() * 1000))
-        print(site_name,str(now_time-12*60*60*1000))
-        get_data = Get_url(str(now_time-12*60* 60 * 1000),**data)
+        print(site_name,str(now_time-16*60*60*1000))
+        get_data = Get_url(str(now_time-16*60* 60 * 1000),**data)
         re_data = get_data.handle()
         print(re_data)
         if not re_data.get("s", None):
@@ -71,4 +72,7 @@ for site_name,data in GET_URL.items():
         elif int(re_data['d']['code']) not in (0, 16):
             time.sleep(5)
         else:
+            collect_obj = QPcollect.Collect_handle()
+            print(collect_obj.analyze_json(re_data['d']))
             break
+
