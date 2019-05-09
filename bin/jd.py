@@ -9,8 +9,8 @@ class Get_url(object):
         self.md5_key = kwargs["MD5_KEY"]  # 加密md5时使用的key
         self.agent =  kwargs["AGENT"]     #第三方提供的编码
         self.start_time = start_time
-    def handle(self,startTime=None):
-        self.now_time = startTime or int(round(time.time() * 1000))
+    def handle(self):
+        self.now_time = int(round(time.time() * 1000))
         data = "s=6&startTime=%s&endTime=%s" % \
                (str(int(self.start_time) - 5* 60 * 1000),self.start_time)
         encrypted_text = self.aes_encrypt(data)  #eas加密
@@ -52,6 +52,7 @@ data = {
                 "MD5_KEY":"B04569AF63BFAFA3",
                 "AGENT": 70936,
             }
+now_time = int(round(time.time() * 1000))
 while True:
     get_data = Get_url("1557383441000",**data)
     re_data = get_data.handle()
