@@ -76,9 +76,11 @@ class Collect_handle(object):
                 table_obj.ensure_index("GameID",unique=True)
 
             try:
-                table_obj.insert(date)
-                self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
-                print("mongo:ID:%s写入成功" % game_id)
+                if table_obj.insert(date):
+                    self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
+                    print("mongo:ID:%s写入成功" % game_id)
+                else:
+                    print("mongo:ID:%s写入失败" % game_id)
             except Exception as e:
                 print("mongo:ID:%s写入失败" % game_id)
                 self.logs.write_err("mongo:ID:%s写入失败" % game_id)
