@@ -63,20 +63,27 @@ GET_URL = {"KY":{
                 "AGENT":61117,
             },
            }
-for site_name,data in GET_URL.items():
+def proofread(date,time):
+    print(date,time)
+    start_time = int(round(time.time() * 1000)) -24 *60*60*1000
+    end_time = int(round(time.time() * 1000)) -20 *60*60*1000
     while True:
-        now_time = int(round(time.time() * 1000))
-        print(site_name,str(now_time-16*60*60*1000))
-        get_data = Get_url(str(now_time-16*60* 60 * 1000),**data)
-        re_data = get_data.handle()
-        print(re_data)
-        if not re_data.get("s", None):
-            time.sleep(5)
-        elif int(re_data['d']['code']) not in (0, 16):
-            time.sleep(5)
-        else:
-            collect_obj = QPcollect.Collect_handle()
-            date_list = collect_obj.analyze_json(re_data['d'])
-            collect_obj.write_mongo(date_list,site_name)
-            break
-
+        for site_name,data in GET_URL.items():
+            while True:
+                print(site_name,str(start_time))
+                get_data = Get_url(str(start_time),**data)
+                re_data = get_data.handle()
+                print(re_data)
+                if not re_data.get("s", None):
+                    time.sleep(5)
+                elif int(re_data['d']['code']) not in (0, 16):
+                    time.sleep(5)
+                else:
+                    collect_obj = QPcollect.Collect_handle()
+                    date_list = collect_obj.analyze_json(re_data['d'])
+                    collect_obj.write_mongo(date_list,site_name)
+                    break
+            start_time +=5*60*1000
+            if start_time < end_time:
+                break
+proofread(sys.argv[1],sys.argv[2])
