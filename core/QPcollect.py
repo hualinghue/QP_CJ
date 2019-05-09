@@ -144,7 +144,6 @@ class Collect_handle(object):
             print('连接mongo失败',e)
             self.logs.write_err("连接mongo失败")
 
-
 class Collect_proofread(object):
     def __init__(self,sys_args):
         self.startTime = sys_args[1]
