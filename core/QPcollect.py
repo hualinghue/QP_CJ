@@ -17,12 +17,14 @@ class Collect(object):
         else:
             self.forever_run()
     def forever_run(self):
-        while True:
-            if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
-                print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),"   开始采集")
-                collect_obj = Collect_handle()
-                collect_obj.handle()
-                self.last_time = datetime.datetime.now().timestamp()
+        # while True:
+        #     if datetime.datetime.now().timestamp() - self.last_time > settings.cj_interval:
+        #         print(datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"),"   开始采集")
+        #         collect_obj = Collect_handle()
+        #         collect_obj.handle()
+        #         self.last_time = datetime.datetime.now().timestamp()
+        collect_obj = Collect_handle()
+        collect_obj.handle()
 
 class Collect_handle(object):
     def __init__(self):

@@ -52,9 +52,9 @@ data = {
                 "MD5_KEY":"B04569AF63BFAFA3",
                 "AGENT": 70936,
             }
-now_time = int(round(time.time() * 1000))
 while True:
-    get_data = Get_url(now_time*5*60* 60 * 1000,**data)
+    now_time = int(round(time.time() * 1000))
+    get_data = Get_url(str(now_time*5*60* 60 * 1000),**data)
     re_data = get_data.handle()
     print(re_data)
     if not re_data.get("s", None):
