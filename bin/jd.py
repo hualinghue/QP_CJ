@@ -86,7 +86,8 @@ def proofread(start_time,interval):
                     collect_obj.write_mongo(date_list,site_name)
                     break
         start_time -= 5*60*1000
-        if start_time < end_time:
+        end_time -=5*60*1000
+        if end_time < 0:
             break
 
 proofread(sys.argv[1],sys.argv[2])
