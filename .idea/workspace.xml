@@ -148,6 +148,16 @@
               <item name="qp_cj" type="462c0819:PsiDirectoryNode" />
               <item name="bin" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="qp_cj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qp_cj" type="462c0819:PsiDirectoryNode" />
+              <item name="conf" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="qp_cj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="qp_cj" type="462c0819:PsiDirectoryNode" />
+              <item name="core" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>

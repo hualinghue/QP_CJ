@@ -2,7 +2,7 @@ from Crypto.Cipher import AES
 import base64
 import hashlib,requests
 import time,json
-from core import QPcollect
+from ..core import QPcollect
 class Get_url(object):
     def __init__(self,start_time,**kwargs):
         self.url = kwargs["GET_URL"]   #请求的url
