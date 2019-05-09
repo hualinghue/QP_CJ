@@ -46,21 +46,29 @@ class Get_url(object):
         result = base64.b64encode(encrypted)  # base64 encode
         return result
 
-data = {
+GET_URL = {"KY":{
                 "GET_URL":"https://kyrecord.ky206.com:190/getRecordHandle",
                 "EAS_KEY":"DCE2A12F667F9BDC",
                 "MD5_KEY":"B04569AF63BFAFA3",
                 "AGENT": 70936,
-            }
-while True:
-    now_time = int(round(time.time() * 1000))
-    print(str(now_time-3*60*60*1000))
-    get_data = Get_url(str(now_time-3*60* 60 * 1000),**data)
-    re_data = get_data.handle()
-    print(re_data)
-    if not re_data.get("s", None):
-        time.sleep(5)
-    elif int(re_data['d']['code']) not in (0, 16):
-        time.sleep(5)
-    else:
-        break
+            },
+           "LC":{
+                "GET_URL":"https://demorecord.lc8889.com:190/getRecordHandle",
+                "EAS_KEY":"44E14CEFF548CADD",
+                "MD5_KEY":"B12932528467099C",
+                "AGENT":61117,
+            },
+           }
+for site_name,data in GET_URL:
+    while True:
+        now_time = int(round(time.time() * 1000))
+        print(site_name,str(now_time-4*60*60*1000))
+        get_data = Get_url(str(now_time-4*60* 60 * 1000),**data)
+        re_data = get_data.handle()
+        print(re_data)
+        if not re_data.get("s", None):
+            time.sleep(5)
+        elif int(re_data['d']['code']) not in (0, 16):
+            time.sleep(5)
+        else:
+            break
