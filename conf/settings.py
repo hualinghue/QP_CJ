@@ -4,12 +4,7 @@ DB_PASSWORD = "sSDm_lizdmOggz"
 DB_PORT = 27017
 DB_NAME = "video_cj"
 DB_HOST = "10.8.63.117"
-# DB_USER = "qp_cjman"
-# DB_PASSWORD = "jjzso=n/sd*sq;;mong"
-# DB_PORT = 27017
 
-# DB_NAME = "QP_CJ"
-# DB_HOST = "10.8.63.117"
 
 url_1 = "https://nihaohpt.wxqq888.com/KYApi/gameBets"
 url_2 = "https://nihaohpt.wxqq888.com/LCApi/gameBets"
