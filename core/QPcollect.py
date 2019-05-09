@@ -72,14 +72,14 @@ class Collect_handle(object):
                 continue
             table_name = "%s_%s_%s" %(web_name,"bets",site_name)
             table_obj = self.mongo_obj[table_name]
-            patents = {}
-            for itme in table_obj.find({"_id":{"$ne":0}}):
-                if itme["GameID"] not in patents.keys():
-                    patents[itme["GameID"]] = itme
-                else:
-                    table_obj.delete_one({"GameID":itme["GameID"]})
-            if table_obj.count() == 0:
-                table_obj.ensure_index("GameID",unique=True)
+            # patents = {}    去重复
+            # for itme in table_obj.find({"_id":{"$ne":0}}):
+            #     if itme["GameID"] not in patents.keys():
+            #         patents[itme["GameID"]] = itme
+            #     else:
+            #         table_obj.delete_one({"GameID":itme["GameID"]})
+            # if table_obj.count() == 0:
+            #     table_obj.ensure_index("GameID",unique=True)
 
             try:
                 x = table_obj.insert_one(date)
