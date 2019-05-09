@@ -63,13 +63,13 @@ GET_URL = {"KY":{
                 "AGENT":61117,
             },
            }
-start_time = int(round(time.time() * 1000)) - 24 * 60 * 60 * 1000
-end_time = int(round(time.time() * 1000)) - 20 * 60 * 60 * 1000
+start_time = 24 * 60 * 60 * 1000
+end_time =  20 * 60 * 60 * 1000
 interval = 0
 while True:
     for site_name,data in GET_URL.items():
         while True:
-            now_time = start_time + interval * 60*1000
+            now_time = int(round(time.time() * 1000)) - start_time
             print(site_name,str(now_time))
             get_data = Get_url(str(now_time),**data)
             re_data = get_data.handle()
