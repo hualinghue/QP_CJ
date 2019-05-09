@@ -59,7 +59,7 @@ GET_URL = {"KY":{
                 "AGENT":61117,
             },
            }
-for site_name,data in GET_URL:
+for site_name,data in GET_URL.items():
     while True:
         now_time = int(round(time.time() * 1000))
         print(site_name,str(now_time-4*60*60*1000))
