@@ -1,7 +1,7 @@
 import datetime,json,re,os
 from conf import settings
 from core import log_handle
-from pymongo import MongoClient,WriteConcern
+from pymongo import MongoClient
 from core import Get_url
 import time
 class Collect(object):
