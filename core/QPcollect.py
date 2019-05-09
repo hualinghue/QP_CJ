@@ -1,7 +1,7 @@
 import datetime,json,re,os
 from conf import settings
 from core import log_handle
-from pymongo import MongoClient
+from pymongo import MongoClient,WriteConcern
 from core import Get_url
 import time
 class Collect(object):
@@ -77,7 +77,7 @@ class Collect_handle(object):
 
             print(table_name,date)
             try:
-                x = table_obj.insert_one(date)
+                x = table_obj.insert_one(date,WriteConcern)
                 print(x)
                 self.logs.write_acc("mongo:ID:%s写入成功" % game_id)
                 print("mongo:ID:%s写入成功" % game_id)
