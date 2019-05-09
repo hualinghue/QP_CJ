@@ -63,8 +63,8 @@ GET_URL = {"KY":{
                 "AGENT":61117,
             },
            }
-def proofread(date,time):
-    print(date,time)
+def proofread(date,times):
+    print(date,times)
     start_time = int(round(time.time())) * 1000 -24 *60*60*1000
     end_time = int(round(time.time())) * 1000 -20 *60*60*1000
     while True:
