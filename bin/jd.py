@@ -55,6 +55,7 @@ data = {
 while True:
     get_data = Get_url("1557331241000",**data)
     re_data = get_data.handle()
+    print(re_data)
     if not re_data.get("s", None):
         time.sleep(5)
     elif int(re_data['d']['code']) not in (0, 16):
