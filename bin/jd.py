@@ -1,8 +1,11 @@
 from Crypto.Cipher import AES
-import base64
+import base64,os,sys
 import hashlib,requests
 import time,json
-from ..core import QPcollect
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+from core import QPcollect
+
 class Get_url(object):
     def __init__(self,start_time,**kwargs):
         self.url = kwargs["GET_URL"]   #请求的url
