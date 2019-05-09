@@ -67,6 +67,7 @@ GET_URL = {"KY":{
 def proofread(start_time,interval):
     start_time = int(round(time.time() * 1000)) - int(start_time)
     end_time =  int(interval) * 60 * 60 * 1000
+    print("start_time:%d,end_time:%d"%(start_time,end_time))
     while True:
         for site_name,data in GET_URL.items():
             while True:
